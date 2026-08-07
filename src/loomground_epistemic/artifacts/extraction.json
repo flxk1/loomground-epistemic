@@ -1,0 +1,18 @@
+{
+  "describes": "Surface cues for the epistemic nD facet, as DATA. A modality OVER a proposition: operator (K know / B believe) + holder (the knower) + proposition + certainty band + evidential source. The holder is an entity NP — its cues are CONSUMED from loomground-factual, not duplicated here.",
+  "dimension": "nD",
+  "system_id": "system:epistemic",
+  "operator_cues": [
+    {"pattern": "\\breasonable grounds to (?:believe|suspect)\\b", "operator": "B", "certainty": "reasonable-grounds"},
+    {"pattern": "\\bhas reason to believe\\b", "operator": "B", "certainty": "possible"},
+    {"pattern": "\\b(?:knows?|is aware|becomes? aware|has become aware|established that|it is known that)\\b", "operator": "K", "certainty": "certain"},
+    {"pattern": "\\bsuspects?\\b", "operator": "B", "certainty": "possible"},
+    {"pattern": "\\b(?:believes?|considers? that|is satisfied that|is of the (?:view|opinion) that)\\b", "operator": "B", "certainty": "probable"},
+    {"pattern": "\\b(?:is likely|are likely|likely to|expects? that|anticipates? that)\\b", "operator": "B", "certainty": "probable"},
+    {"pattern": "\\b(?:estimates? that|assess(?:es)? that)\\b", "operator": "B", "certainty": "estimate"}
+  ],
+  "source_cue": "\\b(?:on the basis of|based on|according to|in light of)\\b\\s*(?P<src>[^.;,]+)",
+  "holder_lead": "^(?:where|when|in the case (?:that|where)|if|provided that)\\b\\s*",
+  "holder_trail_aux": "\\s+(?:has|have|had|is|are|was|were)$",
+  "proposition_lead": "^(?:that|to|a|an|the)\\s+"
+}

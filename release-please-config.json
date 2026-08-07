@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "packages": {
+    ".": {
+      "release-type": "python",
+      "package-name": "loomground-epistemic",
+      "include-component-in-tag": true,
+      "component": "epistemic",
+      "changelog-path": "CHANGELOG.md",
+      "extra-files": ["src/loomground_epistemic/_version.py"]
+    }
+  }
+}

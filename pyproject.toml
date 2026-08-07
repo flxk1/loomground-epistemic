@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: Apache-2.0
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "loomground-epistemic"
+version = "0.1.0"
+description = "Epistemic language: a modal operator over a proposition (know/believe at a certainty threshold, held by an agent). A new nD facet — the alethic-modal sibling of deontic. Stretched across the 5D."
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSES/Apache-2.0.txt", "NOTICE"]
+authors = [{ name = "Loomground Contributors" }]
+# Consumes the assertoric substrate (loomground-factual); the epistemic modality
+# is a facet OVER facts. factual is 0.1.x — the substrate's stable line.
+dependencies = ["loomground-factual>=0.1,<0.2"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+loomground_epistemic = ["artifacts/*.json"]
