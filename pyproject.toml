@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "loomground-epistemic"
 dynamic = ["version"]
-description = "Epistemic language: a modal operator over a proposition (know/believe at a certainty threshold, held by an agent). A new nD facet — the alethic-modal sibling of deontic. Stretched across the 5D."
+description = "Epistemic language plane: a know/believe operator over a proposition, held by an agent at a certainty band, as an nD facet over loomground-factual."
 requires-python = ">=3.10"
 license = "Apache-2.0"
 license-files = ["LICENSES/Apache-2.0.txt", "NOTICE"]
