@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "loomground-epistemic"
-version = "0.1.0"
+dynamic = ["version"]
 description = "Epistemic language: a modal operator over a proposition (know/believe at a certainty threshold, held by an agent). A new nD facet — the alethic-modal sibling of deontic. Stretched across the 5D."
 requires-python = ">=3.10"
 license = "Apache-2.0"
@@ -15,8 +15,21 @@ authors = [{ name = "Loomground Contributors" }]
 # is a facet OVER facts. factual is 0.1.x — the substrate's stable line.
 dependencies = ["loomground-factual>=0.1,<0.2"]
 
+[project.optional-dependencies]
+dev = [
+    "loomground-factual @ git+https://github.com/flxk1/loomground-factual@db60a0592eb7741732944f05279b27def0c9685b",
+    "pytest>=7.0",
+]
+
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.dynamic]
+version = { attr = "loomground_epistemic._version.__version__" }
+
 [tool.setuptools.package-data]
 loomground_epistemic = ["artifacts/*.json"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

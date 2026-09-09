@@ -15,7 +15,7 @@ import importlib.util
 import sys
 from pathlib import Path
 
-_HERE = Path(__file__).resolve().parent
+_HERE = Path(__file__).resolve().parents[1]  # repo root; this file lives in tests/
 _ROOT = _HERE.parent  # family root (siblings are peers of this checkout)
 
 # (import name, checkout directory relative to the family root)
