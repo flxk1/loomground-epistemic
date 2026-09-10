@@ -1,0 +1,27 @@
+{
+  "name": "loomground-epistemic",
+  "version": "0.1.0",
+  "description": "The epistemic plane's reader: who knows or believes what, at which certainty band (K/B, holder, proposition, certainty, source). The epistemic skill is the language card; the loomground MCP server carries epistemic_extract.",
+  "author": {
+    "name": "Loomground Contributors"
+  },
+  "keywords": [
+    "loomground",
+    "epistemic",
+    "knowledge",
+    "belief",
+    "certainty",
+    "legal"
+  ],
+  "skills": "./skills/",
+  "mcpServers": {
+    "loomground": {
+      "command": "loomground-mcp",
+      "args": [
+        "serve",
+        "--transport",
+        "stdio"
+      ]
+    }
+  }
+}
