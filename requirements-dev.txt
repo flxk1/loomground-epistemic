@@ -1,3 +1,3 @@
 # Concrete dev/CI resolution: immutable git revisions of unpublished planes.
 # Kept OUT of pyproject so the built distribution stays index-clean (PyPI rejects direct-URL Requires-Dist).
-loomground-factual @ git+https://github.com/flxk1/loomground-factual@4f3043dcd64f1cde4e30f790a76afe80058ab4dc
+loomground-factual @ git+https://github.com/flxk1/loomground-factual@ebf9fe19d518dde0aad08962632d95f9d97ee31c

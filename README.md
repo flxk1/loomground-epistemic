@@ -11,10 +11,10 @@ Claims about what a party knows are indistinguishable from facts. Marks know or 
 ## Install
 
 ```
-pip install "loomground-epistemic @ git+https://github.com/flxk1/loomground-epistemic@epistemic-v0.1.0"
+pip install "loomground-epistemic @ git+https://github.com/flxk1/loomground-epistemic@epistemic-v0.2.0"
 ```
 
-Requires `loomground-factual` at commit `4f3043d` (pinned in `pyproject.toml`).
+Requires `loomground-factual` 0.2.0 (tag `factual-v0.2.0`, pinned by commit in `pyproject.toml`).
 
 ## Usage
 
@@ -61,14 +61,14 @@ Full card: `docs/language-card.md`.
 Epistemic language plane; states its dependency on loomground-factual and its output contract. Output contract: the `extract` record plus `EPISTEMIC_FACET`; `binds` documents the projection for the consumer's projector. The package runs no inference; whether a certainty threshold named in a norm's factual condition is met is decided downstream.
 
 - Consumes: `loomground-factual` 0.1 (`clean_entity` resolves `holder`); standard library otherwise.
-- Consumed by: zero pinned dependents at 0.1.0; registration surface `EPISTEMIC_FACET`.
+- Consumed by: loomground-ingest (composition extra), loomground-mcp; registration surface `EPISTEMIC_FACET`.
 - Pipeline: `source → loomground-ingest → loomground-versum → loomground-solver → applied or diagnostic planes`; an nD facet beside `loomground-deontic`.
 
 Positioning and prior art: `docs/positioning.md`.
 
 ## Status
 
-0.1.0 · 2 tests · Python ≥ 3.10 (CI 3.12).
+0.2.0 · 21 tests · Python ≥ 3.10 (CI 3.12).
 
 ## How this is made
 
