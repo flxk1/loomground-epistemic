@@ -7,7 +7,10 @@ nothing. It exists so a fresh local checkout with the siblings present — but n
 installed — can run ``pytest`` without an install step. For this package and each
 dependency that fails to import, its ``src`` directory is prepended to
 ``sys.path``. loomground-epistemic consumes loomground-factual (the assertoric
-substrate), so the factual sibling is shimmed too.
+substrate), so the factual sibling is shimmed too. The versum sibling is shimmed
+for TESTS ONLY (appended, never shadowing an install), so the plane's nD-system
+document can be validated by ``versum.nd``; tests ``pytest.importorskip`` it and
+package code never imports it.
 """
 from __future__ import annotations
 
@@ -32,3 +35,8 @@ for _mod, _dir in _SIBLINGS:
         _src = _ROOT / _dir / "src"
         if _src.is_dir() and str(_src) not in sys.path:
             sys.path.insert(0, str(_src))
+
+if importlib.util.find_spec("versum") is None:
+    _versum_src = _ROOT / "loomground-versum" / "src"
+    if _versum_src.is_dir() and str(_versum_src) not in sys.path:
+        sys.path.append(str(_versum_src))

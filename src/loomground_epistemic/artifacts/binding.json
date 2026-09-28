@@ -1,0 +1,9 @@
+{
+  "describes": "How the epistemic facet binds across the fixed 5D: proposition -> RELATIONAL (a factual 5D edge, the thing known or believed), holder -> INTENTIONAL (the agent who holds the attitude), certainty -> CAUSAL (the epistemic certainty field as a factual condition: the threshold is reached or not; a norm's content may name it via the factual plane, the deontic operator carries no 5D dimension), assertion -> TEMPORAL (when the attitude is held). The only place this binding is written.",
+  "binds": {
+    "proposition": "relational",
+    "holder": "intentional",
+    "certainty": "causal",
+    "assertion": "temporal"
+  }
+}

@@ -44,22 +44,26 @@ reviewer, pinned reproducibly, and run offline. The trade is explicit: far less
 breadth and robustness than a medspaCy / spaCy pipeline (no dependency parse, no
 statistical NER, English cues written by hand) in exchange for zero third-party
 dependencies, deterministic offline behaviour, and a rule set one person can
-audit. For a substrate where an extracted band may gate an obligation, that
-auditability is worth more than recall.
+audit. For a substrate where an extracted band may satisfy the factual
+condition of a norm, that auditability is worth more than recall.
 
 **What is actually distinctive** is the *schema*, not the tagging: the certainty
-band is modelled as a gate on a downstream deontic duty. `EPISTEMIC_FACET["binds"]`
-maps `certainty` to a causal condition — the intended reading being that a duty
-fires once a holder's certainty crosses a threshold (e.g. *reasonable grounds to
-believe* → a notification obligation) — while the evidential `source` is kept as
-provenance for that transition. Alongside it, `holder` (who knows) is resolved
-through the *same* NP-head cue as the deontic bearer (who owes), by consuming
-`loomground_factual.clean_entity` rather than re-defining an addressee vocabulary.
-That coupling of an epistemic state to a deontic trigger over a shared entity
-substrate is the part the incumbents above do not target.
+band is modelled as a causal condition in the factual 5D. `EPISTEMIC_FACET["binds"]`
+maps the epistemic `certainty` field to CAUSAL — the binding belongs to the
+certainty field, i.e. to what *is* the case about a holder's state of mind (e.g.
+*reasonable grounds to believe* is reached) — while the evidential `source` is
+kept as provenance for that condition. Alongside it, `holder` (who knows) is
+resolved through the *same* NP-head cue as the deontic bearer (who owes), by
+consuming `loomground_factual.clean_entity` rather than re-defining an addressee
+vocabulary. A norm (e.g. a notification obligation) may name such a certainty
+condition in its content; that content enters the 5D through the factual plane,
+while the deontic operator itself is *ought* and has no 5D dimension. Keeping
+the epistemic state and the norm's factual condition on a shared entity
+substrate, without collapsing *is* into *ought*, is the part the incumbents above
+do not target.
 
 To be precise about scope: this package tags the epistemic cue, its certainty
-band, and its stated source; it does **not** decide whether the resulting duty
-fires. That gate is a schema binding left for a downstream consumer
-(`loomground-solver` / versum) to act on — and today it lives as a descriptor
-field, not executable logic.
+band, and its stated source; it does **not** decide whether any norm's factual
+condition is met, nor what ought to follow. The certainty binding is a schema
+descriptor left for a downstream consumer (`loomground-solver` / versum) to
+read — and today it lives as a descriptor field, not executable logic.

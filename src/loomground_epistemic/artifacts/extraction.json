@@ -14,5 +14,6 @@
   "source_cue": "\\b(?:on the basis of|based on|according to|in light of)\\b\\s*(?P<src>[^.;,]+)",
   "holder_lead": "^(?:where|when|in the case (?:that|where)|if|provided that)\\b\\s*",
   "holder_trail_aux": "\\s+(?:has|have|had|is|are|was|were)$",
-  "proposition_lead": "^(?:that|to|a|an|the)\\s+"
+  "proposition_lead": "^(?:that|to|a|an|the)\\s+",
+  "complementizer": "(?:that)\\s+"
 }
