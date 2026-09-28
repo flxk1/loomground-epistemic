@@ -18,7 +18,7 @@ authors = [{ name = "Loomground Contributors" }]
 # transitive closure is declared, because those tagged commits still carry ranges that
 # only these URLs can satisfy.
 dependencies = [
-    "loomground-factual @ git+https://github.com/flxk1/loomground-factual@factual-v0.1.0",
+    "loomground-factual @ git+https://github.com/flxk1/loomground-factual@4f3043dcd64f1cde4e30f790a76afe80058ab4dc",
 ]
 
 # Loomground plane descriptor contract v1: entry name = plane id, target = a

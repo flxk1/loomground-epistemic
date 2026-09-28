@@ -10,7 +10,7 @@ Claims about what a party knows are indistinguishable from facts. Marks know or 
 pip install "loomground-epistemic @ git+https://github.com/flxk1/loomground-epistemic@epistemic-v0.1.0"
 ```
 
-Requires `loomground-factual` 0.1 (tag `factual-v0.1.0`; dev pin: `requirements-dev.txt`).
+Requires `loomground-factual` at commit `4f3043d` (pinned in `pyproject.toml`).
 
 ## Usage
 ```python
