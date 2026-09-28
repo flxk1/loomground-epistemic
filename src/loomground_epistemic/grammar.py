@@ -43,8 +43,21 @@ def _holder(pre: str) -> str:
     return s.strip(" .,;:")
 
 
-def extract(sentence: str) -> Optional[dict[str, Any]]:
-    """Extract the epistemic facet, or ``None`` when no epistemic operator is present."""
+_COMPLEMENTIZER = re.compile(_EX["complementizer"], re.I)
+_TRIM = " .,;:"
+
+
+def _trim(text: str, start: int, end: int) -> tuple[int, int]:
+    """Narrow ``[start, end)`` past surrounding whitespace and trailing punctuation."""
+    while start < end and text[start].isspace():
+        start += 1
+    while end > start and (text[end - 1].isspace() or text[end - 1] in _TRIM):
+        end -= 1
+    return start, end
+
+
+def _analyse(sentence: str) -> Optional[dict[str, Any]]:
+    """The facet plus the spans it was read from (offsets index ``sentence``)."""
     if not isinstance(sentence, str) or not sentence.strip():
         return None
     for pat, op, band in _OPS:
@@ -53,13 +66,29 @@ def extract(sentence: str) -> Optional[dict[str, Any]]:
             continue
         proposition = _PROP_LEAD.sub("", sentence[m.end():].strip(" .,;:")).strip(" .,;:")
         sm = _SRC.search(sentence)
+        p0, p1 = _trim(sentence, m.end(), len(sentence))
+        cm = _COMPLEMENTIZER.match(sentence, p0)
+        if cm:
+            p0 = cm.end()
+        if sm and p0 < sm.start() < p1:   # the evidential phrase is not the proposition
+            p0, p1 = _trim(sentence, p0, sm.start())
         return {
-            "facet": "nD",
-            "system_id": EPISTEMIC_FACET["system_id"],
-            "operator": op,
-            "holder": _holder(sentence[:m.start()]),
-            "proposition": proposition,
-            "certainty": band,
-            "source": (sm.group("src").strip() if sm else ""),
+            "facet": {
+                "facet": "nD",
+                "system_id": EPISTEMIC_FACET["system_id"],
+                "operator": op,
+                "holder": _holder(sentence[:m.start()]),
+                "proposition": proposition,
+                "certainty": band,
+                "source": (sm.group("src").strip() if sm else ""),
+            },
+            "span": _trim(sentence, 0, len(sentence)),
+            "proposition_span": (p0, p1) if p0 < p1 else None,
         }
     return None
+
+
+def extract(sentence: str) -> Optional[dict[str, Any]]:
+    """Extract the epistemic facet, or ``None`` when no epistemic operator is present."""
+    rec = _analyse(sentence)
+    return dict(rec["facet"]) if rec else None

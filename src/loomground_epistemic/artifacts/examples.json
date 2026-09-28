@@ -1,0 +1,295 @@
+{
+  "describes": "Published conformance vectors for the epistemic plane: each sentence with the exact claims produce() returns. The first seven are the credit-decision case (only the fifth carries an epistemic operator; the rest yield []); the others are cross-jurisdiction epistemic provisions.",
+  "examples": [
+    {
+      "sentence": "The bank is a controller.",
+      "expected": []
+    },
+    {
+      "sentence": "The scoring model is part of the credit system.",
+      "expected": []
+    },
+    {
+      "sentence": "The controller must not make a solely automated decision on a credit application.",
+      "expected": []
+    },
+    {
+      "sentence": "The controller may use the score to prepare a decision.",
+      "expected": []
+    },
+    {
+      "sentence": "The controller knows that the training data is inaccurate.",
+      "expected": [
+        {
+          "relation": "knowledge",
+          "span": [
+            0,
+            57
+          ],
+          "coordinates": {
+            "operator": "K",
+            "holder": "controller",
+            "certainty": "certain"
+          },
+          "slots": {
+            "epistemic.operator": "operator",
+            "epistemic.holder": "holder",
+            "epistemic.certainty": "certainty"
+          },
+          "method": "loomground-epistemic/extract",
+          "links": [
+            {
+              "type": "relational",
+              "relation": "proposition",
+              "to_span": [
+                26,
+                57
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentence": "A reviewer shall examine every rejection before it is sent.",
+      "expected": []
+    },
+    {
+      "sentence": "The review follows the automated scoring.",
+      "expected": []
+    },
+    {
+      "sentence": "The controller has reasonable grounds to believe a personal data breach has occurred.",
+      "expected": [
+        {
+          "relation": "belief",
+          "span": [
+            0,
+            84
+          ],
+          "coordinates": {
+            "operator": "B",
+            "holder": "controller",
+            "certainty": "reasonable-grounds"
+          },
+          "slots": {
+            "epistemic.operator": "operator",
+            "epistemic.holder": "holder",
+            "epistemic.certainty": "certainty"
+          },
+          "method": "loomground-epistemic/extract",
+          "links": [
+            {
+              "type": "relational",
+              "relation": "proposition",
+              "to_span": [
+                49,
+                84
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentence": "Where the controller becomes aware that a breach is likely to result in a high risk.",
+      "expected": [
+        {
+          "relation": "knowledge",
+          "span": [
+            0,
+            83
+          ],
+          "coordinates": {
+            "operator": "K",
+            "holder": "controller",
+            "certainty": "certain"
+          },
+          "slots": {
+            "epistemic.operator": "operator",
+            "epistemic.holder": "holder",
+            "epistemic.certainty": "certainty"
+          },
+          "method": "loomground-epistemic/extract",
+          "links": [
+            {
+              "type": "relational",
+              "relation": "proposition",
+              "to_span": [
+                40,
+                83
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentence": "The provider believes that the system meets the requirements.",
+      "expected": [
+        {
+          "relation": "belief",
+          "span": [
+            0,
+            60
+          ],
+          "coordinates": {
+            "operator": "B",
+            "holder": "provider",
+            "certainty": "probable"
+          },
+          "slots": {
+            "epistemic.operator": "operator",
+            "epistemic.holder": "holder",
+            "epistemic.certainty": "certainty"
+          },
+          "method": "loomground-epistemic/extract",
+          "links": [
+            {
+              "type": "relational",
+              "relation": "proposition",
+              "to_span": [
+                27,
+                60
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentence": "The supervisory authority suspects an infringement of this Regulation.",
+      "expected": [
+        {
+          "relation": "belief",
+          "span": [
+            0,
+            69
+          ],
+          "coordinates": {
+            "operator": "B",
+            "holder": "supervisory authority",
+            "certainty": "possible"
+          },
+          "slots": {
+            "epistemic.operator": "operator",
+            "epistemic.holder": "holder",
+            "epistemic.certainty": "certainty"
+          },
+          "method": "loomground-epistemic/extract",
+          "links": [
+            {
+              "type": "relational",
+              "relation": "proposition",
+              "to_span": [
+                35,
+                69
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentence": "- 1 A business is satisfied that the consumer has consented to the sale.",
+      "expected": [
+        {
+          "relation": "belief",
+          "span": [
+            0,
+            71
+          ],
+          "coordinates": {
+            "operator": "B",
+            "holder": "business",
+            "certainty": "probable"
+          },
+          "slots": {
+            "epistemic.operator": "operator",
+            "epistemic.holder": "holder",
+            "epistemic.certainty": "certainty"
+          },
+          "method": "loomground-epistemic/extract",
+          "links": [
+            {
+              "type": "relational",
+              "relation": "proposition",
+              "to_span": [
+                33,
+                71
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentence": "The deployer has reason to believe that use of the system may present a risk.",
+      "expected": [
+        {
+          "relation": "belief",
+          "span": [
+            0,
+            76
+          ],
+          "coordinates": {
+            "operator": "B",
+            "holder": "deployer",
+            "certainty": "possible"
+          },
+          "slots": {
+            "epistemic.operator": "operator",
+            "epistemic.holder": "holder",
+            "epistemic.certainty": "certainty"
+          },
+          "method": "loomground-epistemic/extract",
+          "links": [
+            {
+              "type": "relational",
+              "relation": "proposition",
+              "to_span": [
+                40,
+                76
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentence": "The authority estimates that the damage is limited, based on the audit report.",
+      "expected": [
+        {
+          "relation": "belief",
+          "span": [
+            0,
+            77
+          ],
+          "coordinates": {
+            "operator": "B",
+            "holder": "authority",
+            "certainty": "estimate",
+            "source": "the audit report"
+          },
+          "slots": {
+            "epistemic.operator": "operator",
+            "epistemic.holder": "holder",
+            "epistemic.certainty": "certainty",
+            "epistemic.source": "source"
+          },
+          "method": "loomground-epistemic/extract",
+          "links": [
+            {
+              "type": "relational",
+              "relation": "proposition",
+              "to_span": [
+                29,
+                50
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

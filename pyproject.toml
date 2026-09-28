@@ -21,6 +21,11 @@ dependencies = [
     "loomground-factual @ git+https://github.com/flxk1/loomground-factual@factual-v0.1.0",
 ]
 
+# Loomground plane descriptor contract v1: entry name = plane id, target = a
+# zero-arg plane() returning the descriptor (nD system, 5D binding, producer).
+[project.entry-points."loomground.planes"]
+epistemic = "loomground_epistemic.plane:plane"
+
 [project.optional-dependencies]
 dev = [
     "pytest>=7.0",
